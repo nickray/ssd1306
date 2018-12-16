@@ -30,9 +30,9 @@ where
         let mut writebuf: [u8; 8] = [0; 8];
         writebuf[1..=cmds.len()].copy_from_slice(&cmds[0..cmds.len()]);
 
-        self.i2c
-            .write(self.addr, &writebuf[..=cmds.len()])
-            .map_err(|_| ())?;
+        let res = self.i2c
+            .write(self.addr, &writebuf[..=cmds.len()]);
+        res.map_err(|_| ()).expect("send_command failed");
 
         Ok(())
     }

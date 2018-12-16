@@ -27,11 +27,9 @@ cortex-m = "0.5.8"
 cortex-m-rt = "0.6.6"
 panic-semihosting = "0.5.1"
 
-[dev-dependencies.stm32f103xx-hal]
-features = ["rt"]
-git = "https://github.com/japaric/stm32f103xx-hal.git"
-rev = "d1bfbbf9148fc3b9d095fdb3f299aca4070531d8"
-version = "*"
+[dev-dependencies.stm32l4xx-hal]
+features = ["stm32l4x2", "rt"]
+git = "https://github.com/stm32-rs/stm32l4xx-hal.git"
 
 [features]
 default = ["graphics"]

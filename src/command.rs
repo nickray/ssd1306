@@ -93,6 +93,7 @@ impl Command {
             Command::Contrast(val) => ([0x81, val, 0, 0, 0, 0, 0], 2),
             Command::AllOn(on) => ([0xA4 | (on as u8), 0, 0, 0, 0, 0, 0], 1),
             Command::Invert(inv) => ([0xA6 | (inv as u8), 0, 0, 0, 0, 0, 0], 1),
+            // 0xAE = 174
             Command::DisplayOn(on) => ([0xAE | (on as u8), 0, 0, 0, 0, 0, 0], 1),
             Command::HScrollSetup(dir, start, end, rate) => (
                 [

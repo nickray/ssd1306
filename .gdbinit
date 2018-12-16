@@ -15,4 +15,7 @@ monitor arm semihosting enable
 # monitor itm port 0 on
 
 load
-step
+break init_column_mode
+break send_commands
+# dashboard -output /dev/pts/3
+continue
