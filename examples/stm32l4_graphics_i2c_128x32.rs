@@ -86,6 +86,7 @@ fn main() -> ! {
 
     let mut disp: GraphicsMode<_> = Builder::new()
         .with_size(DisplaySize::Display128x32)
+        .with_i2c_addr(0x78)
         .connect_i2c(i2c)
         .into();
 
